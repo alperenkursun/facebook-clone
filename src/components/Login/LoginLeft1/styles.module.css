@@ -1,0 +1,13 @@
+.imageDiv {
+  padding-top: 112px;
+  padding-bottom: 16px;
+}
+
+.text {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 32px;
+  width: 500px;
+  padding: 0 0 20px;
+}

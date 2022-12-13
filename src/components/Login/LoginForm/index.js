@@ -60,6 +60,7 @@ function LoginForm() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
+              placeholder="E-posta veya Telefon Numarası"
             />
             {errors.email && touched.email && errors.email}
 
@@ -74,7 +75,7 @@ function LoginForm() {
                 borderColor="#ccd0d5"
                 pr="4.5rem"
                 type={show ? "text" : "password"}
-                placeholder="Enter password"
+                placeholder="Şifre"
               />
               <InputRightElement width="4.5rem" className={styles.buttonMiddle}>
                 <Button
@@ -110,7 +111,13 @@ function LoginForm() {
           </form>
         )}
       </Formik>
-      <div className={styles.loginRightBottom}></div>
+      <div className={styles.loginRightMiddle}>
+        <a href="/#">Şifreni mi Unuttun?</a>
+        <hr />
+        <Button colorScheme="whatsapp" fontWeight="bold">
+          Yeni Hesap Oluştur
+        </Button>
+      </div>
     </div>
   );
 }
