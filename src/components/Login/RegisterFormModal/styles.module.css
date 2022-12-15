@@ -1,0 +1,60 @@
+.registerForm {
+  width: 432px;
+  height: 571.672px;
+  margin: auto 0;
+}
+
+.question {
+  color: white;
+  background-color: rgb(96, 103, 112);
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+}
+
+.radio {
+  width: 130.328px;
+  height: 40px;
+  border: 1px solid black;
+  padding-left: 16px;
+  padding-right: 32px;
+  border-radius: 0.375rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio1 {
+  width: 125.328px;
+  height: 34px;
+}
+
+.text {
+  color: #777;
+  font-size: 11px;
+  margin: 1em 0;
+  text-align: left;
+  width: auto;
+}
+
+.text a {
+  color: #385898;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.text a:hover {
+  text-decoration: underline;
+}
+
+.registerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.register {
+  width: 194px;
+  height: 36px;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 0 32px;
+}

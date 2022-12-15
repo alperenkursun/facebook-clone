@@ -1,9 +1,12 @@
-import { Text } from "@chakra-ui/react";
 import React from "react";
 import LoginForm from "./LoginForm";
 import LoginLeft1 from "./LoginLeft1";
+import LoginLeft2 from "./LoginLeft2";
+
 import LoginFooter from "./LoginFooter";
 import styles from "./styles.module.css";
+import RegisterFormModal from "./RegisterFormModal";
+import { useDisclosure } from "@chakra-ui/react";
 
 function Login() {
   return (
@@ -11,16 +14,12 @@ function Login() {
       <div className={styles.loginUp}>
         <div className={styles.loginUpInner}>
           <div className={styles.loginUpContainer}>
-            <div className={styles.loginLeft1}>
-              <LoginLeft1 />
+            <div className={styles.loginLeft2}>
+              <LoginLeft2 />
             </div>
 
             <div className={styles.loginRight}>
               <LoginForm />
-              <Text className={styles.loginRightBottom}>
-                Ünlü biri, marka veya işletme için
-                <a href="/#"> Sayfa Oluştur</a>
-              </Text>
             </div>
           </div>
         </div>
@@ -29,6 +28,8 @@ function Login() {
       <div className={styles.loginBottom}>
         <LoginFooter />
       </div>
+
+      <RegisterFormModal />
     </div>
   );
 }

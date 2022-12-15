@@ -1,0 +1,96 @@
+.imageDiv {
+  width: 536px;
+  height: 58.078px;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.text1 {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 32px;
+  color: #1c1e21;
+}
+
+.text2 {
+  color: #606770;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  font-weight: normal;
+}
+
+.accounts {
+  font-family: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  font-size: 12px;
+}
+
+.account {
+  width: 160px;
+  height: 206px;
+  margin-right: 18px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.1s cubic-bezier(0.08, 0.52, 0.52, 1);
+}
+
+.account:hover {
+  box-shadow: 0 1px 8px 5px #dddfe2;
+  text-decoration: none;
+}
+
+.name {
+  padding: 12px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  color: white;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px;
+}
+
+.account:hover .close {
+  background-color: #fff;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 30%);
+  transform: scale(1.5);
+  transform-origin: bottom right;
+  color: rgb(129, 129, 129);
+  transition: all 0.1s cubic-bezier(0.08, 0.52, 0.52, 1);
+}
+
+.addAccount {
+  width: 158;
+  height: 160px;
+  position: relative;
+  background-color: rgb(245, 246, 247);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.circlePlus {
+  width: 42px;
+  height: 42px;
+  color: rgb(25, 118, 242);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,11 +1,12 @@
 .formContainer {
   width: 396px;
-  height: 325.825px;
+  height: 349.825px;
   padding-top: 10px;
   margin-top: 40px;
   background-color: white;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   border-radius: 8px;
+  font-family: inherit;
 }
 
 .loginRightBottom {
@@ -40,4 +41,28 @@
   margin: 20px 16px;
   width: 364px;
   font-size: 12px;
+}
+
+.loginRightBottom {
+  width: 396px;
+  border-top: none;
+  color: #1c1e21;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.loginRightBottom a {
+  font-family: SFProText-Semibold, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  direction: ltr;
+  line-height: 1.34;
+}
+
+.loginRightBottom a:hover {
+  text-decoration: underline;
 }

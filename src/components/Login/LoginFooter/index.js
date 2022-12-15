@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.css";
-import adchoice from "./adchoice.png";
+import ad from "./adchoice.jpeg";
 
 function LoginFooter() {
   return (
@@ -9,37 +9,37 @@ function LoginFooter() {
       <ul className={styles.languages}>
         <li>Türkçe</li>
         <li>
-          <a src="/#">Kurdî (Kurmancî)</a>
+          <a href="/#">Kurdî (Kurmancî)</a>
         </li>
         <li>
-          <a src="/#">العربية</a>
+          <a href="/#">العربية</a>
         </li>
         <li>
-          <a src="/#">English (UK)</a>
+          <a href="/#">English (UK)</a>
         </li>
         <li>
-          <a src="/#">Zaza</a>
+          <a href="/#">Zaza</a>
         </li>
         <li>
-          <a src="/#">Deutsch</a>
+          <a href="/#">Deutsch</a>
         </li>
         <li>
-          <a src="/#">Русский</a>
+          <a href="/#">Русский</a>
         </li>
         <li>
-          <a src="/#">Français (France)</a>
+          <a href="/#">Français (France)</a>
         </li>
         <li>
-          <a src="/#">فارسی</a>
+          <a href="/#">فارسی</a>
         </li>
         <li>
-          <a src="/#">Español</a>
+          <a href="/#">Español</a>
         </li>
         <li>
-          <a src="/#">Português (Brasil)</a>
+          <a href="/#">Português (Brasil)</a>
         </li>
         <li>
-          <a src="/#">
+          <a href="/#">
             <FontAwesomeIcon className={styles.languagePlus} icon={faPlus} />
           </a>
         </li>
@@ -83,10 +83,10 @@ function LoginFooter() {
           <a href="/#">Instagram</a>
         </li>
         <li>
-          <a href="/#">Bulletin</a>
+          <a href="#/">Bulletin</a>
         </li>
         <li>
-          <a href="/#">Bağış Kampanyaları</a>
+          <a href="#/">Bağış Kampanyaları</a>
         </li>
         <li>
           <a href="/#">Hizmetler</a>
@@ -125,10 +125,9 @@ function LoginFooter() {
           <a href="/#">Ad Choices</a>
         </li>
         <img
-          src={adchoice}
+          src={ad}
           alt="adchoice"
-          width="16px"
-          height="16px !important"
+          style={{ width: "16px", height: "16px" }}
         />
 
         <li>
@@ -138,7 +137,7 @@ function LoginFooter() {
           <a href="/#">Yardım</a>
         </li>
         <li>
-          <a href="/#">Kişi Yükleme ve Hesabı Olmayan KişilerAyarlar</a>
+          <a href="/#">Kişi Yükleme ve Hesabı Olmayan Kişiler</a>
         </li>
       </ul>
       <div className={styles.copyright}> Meta © 2022</div>
