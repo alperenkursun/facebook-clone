@@ -30,16 +30,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { useFormik } from "formik";
 import userSchema from "./validations";
+import { useAuth } from "../../../contexts/AuthContext";
 
 function RegisterFormModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [value, setValue] = useState("1");
-
+  const { users } = useAuth();
   const initialRef = useRef(null);
   const finalRef = useRef(null);
 
   const max = new Date().getFullYear();
-  const min = max - 117;
   const years = [];
   for (let i = 0; i < max; i++) {
     if (i === 119) {
@@ -88,21 +88,15 @@ function RegisterFormModal() {
     },
     validationSchema: userSchema,
     onSubmit: (values, bag) => {
-      values.name = "";
-      values.surname = "";
-      values.email = "";
-      values.password = "";
-      values.day = day;
-      values.month = months[month];
-      values.year = max;
-      values.gender = "";
       console.log(values);
+      users.push(values);
+      localStorage.setItem("users", JSON.stringify(users));
+      bag.resetForm();
       formik.setErrors({});
-
       document.getElementById("close").click();
       setAlert(true);
 
-      // alert(JSON.stringify(values, null, 2));
+      console.log(users);
     },
   });
 
@@ -144,14 +138,7 @@ function RegisterFormModal() {
             fontSize="md"
             onClick={() => {
               formik.setErrors({});
-              formik.values.name = "";
-              formik.values.surname = "";
-              formik.values.email = "";
-              formik.values.password = "";
-              formik.values.day = day;
-              formik.values.month = months[month];
-              formik.values.year = max;
-              formik.values.gender = "";
+              setErr({});
               setAlert(false);
             }}
           />
@@ -166,7 +153,9 @@ function RegisterFormModal() {
                         name="name"
                         type="text"
                         onChange={formik.handleChange}
-                        onBlur={() => setErr(formik.errors)}
+                        onBlur={() => {
+                          setErr({ ...err, name: formik.errors.name });
+                        }}
                         value={formik.values.name}
                         ref={initialRef}
                         placeholder="Adın"
@@ -194,7 +183,9 @@ function RegisterFormModal() {
                         name="surname"
                         type="text"
                         onChange={formik.handleChange}
-                        onBlur={() => setErr(formik.errors)}
+                        onBlur={() =>
+                          setErr({ ...err, surname: formik.errors.surname })
+                        }
                         value={formik.values.surname}
                         placeholder="Soyadın"
                         style={err.surname && { border: "1px solid red" }}
@@ -220,7 +211,9 @@ function RegisterFormModal() {
                       id="email"
                       name="email"
                       onChange={formik.handleChange}
-                      onBlur={() => setErr(formik.errors)}
+                      onBlur={() =>
+                        setErr({ ...err, email: formik.errors.email })
+                      }
                       value={formik.values.email}
                       placeholder="Cep telefonu numarası veya e-posta"
                       style={err.email && { border: "1px solid red" }}
@@ -246,8 +239,10 @@ function RegisterFormModal() {
                       name="password"
                       type="password"
                       onChange={formik.handleChange}
+                      onBlur={() =>
+                        setErr({ ...err, password: formik.errors.password })
+                      }
                       value={formik.values.password}
-                      onBlur={() => setErr(formik.errors)}
                       placeholder="Yeni şifre"
                       style={err.password && { border: "1px solid red" }}
                     />
@@ -282,7 +277,9 @@ function RegisterFormModal() {
                         name="day"
                         type="day"
                         onChange={formik.handleChange}
-                        onBlur={() => setErr(formik.errors)}
+                        onBlur={() =>
+                          setErr({ ...err, day: formik.errors.day })
+                        }
                         value={formik.values.day}
                         pr="8px"
                         style={err.year && { border: "1px solid red" }}
@@ -316,7 +313,9 @@ function RegisterFormModal() {
                         name="month"
                         type="month"
                         onChange={formik.handleChange}
-                        onBlur={() => setErr(formik.errors)}
+                        onBlur={() =>
+                          setErr({ ...err, month: formik.errors.month })
+                        }
                         value={formik.values.month}
                         pr="8px"
                         style={err.year && { border: "1px solid red" }}
@@ -350,7 +349,9 @@ function RegisterFormModal() {
                         name="year"
                         type="year"
                         onChange={formik.handleChange}
-                        onBlur={() => setErr(formik.errors)}
+                        onBlur={() =>
+                          setErr({ ...err, year: formik.errors.year })
+                        }
                         value={formik.values.year}
                         pr="8px"
                         style={err.year && { border: "1px solid red" }}
