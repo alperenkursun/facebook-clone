@@ -7,15 +7,21 @@ import LoginFooter from "./LoginFooter";
 import styles from "./styles.module.css";
 import RegisterFormModal from "./RegisterFormModal";
 import { useDisclosure } from "@chakra-ui/react";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Login() {
+  const { loginnedUsers } = useAuth();
   return (
     <div className={styles.bodyLogin}>
       <div className={styles.loginUp}>
         <div className={styles.loginUpInner}>
           <div className={styles.loginUpContainer}>
-            <div className={styles.loginLeft2}>
-              <LoginLeft2 />
+            <div
+              className={
+                loginnedUsers.length > 0 ? styles.loginLeft2 : styles.loginLeft1
+              }
+            >
+              {loginnedUsers.length > 0 ? <LoginLeft2 /> : <LoginLeft1 />}
             </div>
 
             <div className={styles.loginRight}>

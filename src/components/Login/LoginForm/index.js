@@ -19,7 +19,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function LoginForm() {
-  const { login, setLogin } = useAuth();
+  let {
+    isLogin,
+    login,
+    users,
+    setIsLogin,
+    emailValidation,
+    setEmailValidation,
+    passwordValidation,
+    setPasswordValidation,
+    loginnedUsers,
+    setLoginnedUsers,
+  } = useAuth();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   return (
@@ -32,7 +43,51 @@ function LoginForm() {
             //   alert(JSON.stringify(values, null, 2));
             //   setSubmitting(false);
             // }, 400);
-            setLogin({ email: values.email, password: values.password });
+            setEmailValidation(false);
+            setPasswordValidation(false);
+            let emailControl = false;
+            for (let i = 0; i < users.length; i++) {
+              if (users[i].email === values.email) {
+                emailControl = true;
+              }
+              if (
+                users[i].email === values.email &&
+                users[i].password === values.password
+              ) {
+                console.log("Giriş yapıldı...");
+                setIsLogin(true);
+                setEmailValidation(false);
+                setPasswordValidation(false);
+                if (loginnedUsers.length < 6) {
+                  let isThere = false;
+                  for (let item of loginnedUsers) {
+                    console.log(item);
+                    console.log(users[i]);
+
+                    if (item.email === users[i].email) {
+                      console.log("girdi");
+                      isThere = true;
+                      break;
+                    }
+                  }
+                  if (isThere === false) {
+                    setLoginnedUsers([...loginnedUsers, users[i]]);
+                  }
+                }
+              }
+            }
+            if (!isLogin) {
+              if (emailControl) {
+                setEmailValidation(false);
+                setPasswordValidation(true);
+              } else {
+                setEmailValidation(true);
+                setPasswordValidation(false);
+              }
+            }
+
+            login = values;
+            localStorage.setItem("login", JSON.stringify(login));
           }}
         >
           {({
@@ -65,55 +120,82 @@ function LoginForm() {
                     autoFocus
                   />
                 </PopoverTrigger>
-                {errors.email && (
+                {emailValidation && (
                   <PopoverContent
-                    color="white"
-                    backgroundColor="rgb(190,75,73)"
+                    color="rgb(190,75,73)"
+                    backgroundColor="white"
                     width="auto"
                   >
-                    <PopoverArrow backgroundColor="rgb(190,75,73)" />
+                    <PopoverArrow backgroundColor="white" />
 
-                    <PopoverHeader>{errors.email}</PopoverHeader>
+                    <PopoverHeader>
+                      Girdiğin e-posta veya cep telefonu numarası bir hesaba
+                      bağlı değil.{" "}
+                      <a href="/" style={{ fontWeight: "700" }}>
+                        Hesabını bul ve giriş yap.
+                      </a>
+                    </PopoverHeader>
                   </PopoverContent>
                 )}
               </Popover>
 
-              <InputGroup size="md">
-                <Input
-                  id="password"
-                  width="364px"
-                  height="52px"
-                  py="14px"
-                  px="16px"
-                  mx="16px"
-                  my="6px"
-                  borderColor="#ccd0d5"
-                  pr="4.5rem"
-                  type={show ? "text" : "password"}
-                  placeholder="Şifre"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                />
-                <InputRightElement
-                  width="4.5rem"
-                  className={styles.buttonMiddle}
-                >
-                  <Button
-                    verticalAlign="middle"
-                    h="1.75rem"
-                    size="sm"
-                    onClick={handleClick}
-                    style={{ backgroundColor: "transparent" }}
+              <Popover>
+                <PopoverTrigger>
+                  <InputGroup size="md">
+                    <Input
+                      id="password"
+                      width="364px"
+                      height="52px"
+                      py="14px"
+                      px="16px"
+                      mx="16px"
+                      my="6px"
+                      borderColor="#ccd0d5"
+                      pr="4.5rem"
+                      type={show ? "text" : "password"}
+                      placeholder="Şifre"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                    />
+                    <InputRightElement
+                      width="4.5rem"
+                      className={styles.buttonMiddle}
+                    >
+                      <Button
+                        verticalAlign="middle"
+                        h="1.75rem"
+                        size="sm"
+                        onClick={handleClick}
+                        style={{ backgroundColor: "transparent" }}
+                      >
+                        {show ? (
+                          <FontAwesomeIcon icon={faEye} />
+                        ) : (
+                          <FontAwesomeIcon icon={faEyeSlash} />
+                        )}
+                      </Button>
+                    </InputRightElement>
+                  </InputGroup>
+                </PopoverTrigger>
+                {passwordValidation && (
+                  <PopoverContent
+                    color="rgb(190,75,73)"
+                    backgroundColor="white"
+                    width="auto"
                   >
-                    {show ? (
-                      <FontAwesomeIcon icon={faEye} />
-                    ) : (
-                      <FontAwesomeIcon icon={faEyeSlash} />
-                    )}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
+                    <PopoverArrow backgroundColor="white" />
+
+                    <PopoverHeader>
+                      Girdiğin şifre yanlış.{" "}
+                      <a href="/" style={{ fontWeight: "700" }}>
+                        Şifreni mi unuttun?
+                      </a>
+                    </PopoverHeader>
+                  </PopoverContent>
+                )}
+              </Popover>
+
               <Button
                 colorScheme="messenger"
                 width="364px"
