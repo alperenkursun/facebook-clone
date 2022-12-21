@@ -1,0 +1,17 @@
+.mainContentContainer {
+  margin-left: 300px;
+  margin-right: 360px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.mainContainer {
+  width: 680px;
+  height: 100vh;
+}
+
+.mainInner {
+  margin-top: 79px;
+  height: calc(100% - 79px);
+}

@@ -1,0 +1,89 @@
+.contactHeader {
+  padding-top: 20px;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  padding-left: 16px;
+  display: flex;
+}
+
+.header {
+  width: 200px;
+  height: 21px;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  color: rgb(5, 5, 5);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin: 0 12px;
+  color: rgb(101, 103, 107);
+}
+
+.contactsContainer {
+  margin: 8px 0;
+}
+
+.contact {
+  margin: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
+  margin: 8px 12px 8px 0px;
+  border-radius: 100%;
+}
+
+.contactName {
+  color: rgb(5, 5, 5);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.groupContacts {
+  margin-top: 20px;
+  margin-bottom: 4px;
+  margin: 0 16px;
+  color: rgb(5, 5, 5);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.newGroup {
+  margin: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.imageNew {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  margin: 8px 12px 8px 0px;
+  border-radius: 100%;
+  background-color: rgb(228, 230, 235);
+}
+
+.penIcon {
+  width: 20px;
+  height: 20px;
+  padding: 14px;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 12px 28px rgba(0, 0, 0, 0.2);
+  color: rgb(28, 30, 33);
+}
+
+.penIconContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -125%);
+}
