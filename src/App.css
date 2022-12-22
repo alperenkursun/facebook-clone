@@ -1,5 +1,5 @@
 .app {
-  width: calc(100vw - 17px);
-  height: 100vw !important;
+  width: 100vw;
+  height: max-content;
   background-color: rgb(240, 242, 245);
 }
