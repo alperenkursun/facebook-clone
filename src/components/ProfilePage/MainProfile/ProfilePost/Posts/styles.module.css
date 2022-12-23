@@ -1,0 +1,133 @@
+.post {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+}
+
+.postUp {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 6px;
+}
+
+.online {
+  width: 9px;
+  height: 9px;
+  background-color: rgb(49, 162, 76);
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  transform: translate(-100%, -100%);
+}
+
+.profileContainer {
+  position: relative;
+  display: inline;
+}
+
+.profileNameContainer {
+  display: flex;
+  flex-direction: column;
+  width: 564px;
+  padding-left: 8px;
+}
+
+.profileName {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.postTime {
+  color: rgb(101, 103, 107) !important;
+}
+
+.postContent {
+  padding: 4px 16px 16px 16px;
+  color: rgb(5, 5, 5);
+}
+
+.postImage {
+  width: 680px;
+  height: 750px;
+}
+
+.buttonsContainer {
+  margin: 0 12px;
+}
+
+.buttons {
+  padding: 6px 2px;
+  display: flex;
+  border-bottom: 1px solid rgb(240, 242, 245);
+  margin-bottom: 4px;
+}
+
+.likeContainer {
+  width: 322px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(28, 30, 33);
+  cursor: pointer;
+}
+
+.likeContainer:hover {
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+}
+
+.commentContainer {
+  padding: 4px 16px 8px 16px;
+  width: 680px;
+  display: flex;
+}
+
+.onlineMenu {
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  transform: translate(-100%, -100%);
+}
+
+.input {
+  background-color: rgb(240, 242, 245);
+  border: none;
+  outline: none;
+  width: 600px;
+  height: 40px;
+  padding: 12px 8px;
+  border-radius: 50px;
+}
+
+.postInput {
+  background-color: rgb(240, 242, 245);
+  border: none;
+  outline: none;
+  width: 600px;
+  height: 40px;
+  padding: 12px 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.postInput:hover {
+  background-color: rgb(228, 230, 233);
+}
+
+.ellipsis {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.ellipsis:hover {
+  background-color: rgb(242, 242, 242);
+  border-radius: 50%;
+}

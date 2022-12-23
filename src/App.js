@@ -1,22 +1,17 @@
 import "./App.css";
-import Contacts from "./components/Contacts";
+import ProfilePage from "./components/ProfilePage";
+import MainPage from "./components/MainPage";
 import Login from "./components/Login";
-import MainContent from "./components/MainContent";
-import MainProfile from "./components/MainProfile";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Sidebar2 from "./components/Sidebar2";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
+  const { isLogin, pages } = useAuth();
+
   return (
     <div className="app">
-      {/* <Login /> */}
-      <Navbar />
-      <Sidebar2 />
-      <MainProfile />
-      {/* <Sidebar /> */}
-      {/* <MainContent />
-      <Contacts /> */}
+      {isLogin === false && <Login />}
+      {isLogin === true && pages === "Main" && <MainPage />}
+      {isLogin === true && pages === "Profile" && <ProfilePage />}
     </div>
   );
 }

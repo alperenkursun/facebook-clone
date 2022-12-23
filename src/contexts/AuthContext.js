@@ -22,9 +22,17 @@ function AuthProvider({ children }) {
   const [loginnedUsers, setLoginnedUsers] = useState(loginnedUser);
   const [emailValidation, setEmailValidation] = useState(false);
   const [passwordValidation, setPasswordValidation] = useState(false);
+  const [disable, setDisable] = useState(null);
+  const [loginnedUserr, setLoginnedUserr] = useState({
+    name: "asdasd",
+    surname: "sadasd",
+  });
+  const [pages, setPages] = useState("Main");
+  const [profilePages, setProfilePages] = useState("Pr");
 
   localStorage.setItem("loginnedUsers", JSON.stringify(loginnedUsers));
   localStorage.setItem("login", JSON.stringify(login));
+
   // localStorage.setItem("isLogin", JSON.stringify(isLogin));
 
   // for (let i = 0; i < users.length; i++) {
@@ -40,6 +48,7 @@ function AuthProvider({ children }) {
   console.log("users", users);
   console.log("login", login);
   console.log("loginnedUsers", loginnedUsers);
+  console.log("loginnedUserr", loginnedUserr);
 
   const values = {
     users,
@@ -52,6 +61,14 @@ function AuthProvider({ children }) {
     setEmailValidation,
     passwordValidation,
     setPasswordValidation,
+    disable,
+    setDisable,
+    loginnedUserr,
+    setLoginnedUserr,
+    pages,
+    setPages,
+    profilePages,
+    setProfilePages,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

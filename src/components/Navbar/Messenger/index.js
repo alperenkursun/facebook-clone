@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 function Messenger() {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <FontAwesomeIcon icon={faMessage} className={styles.messenger} />
     </div>
   );

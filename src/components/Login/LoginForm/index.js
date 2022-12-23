@@ -30,6 +30,9 @@ function LoginForm() {
     setPasswordValidation,
     loginnedUsers,
     setLoginnedUsers,
+    disable,
+    setDisable,
+    setLoginnedUserr,
   } = useAuth();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -55,26 +58,44 @@ function LoginForm() {
                 users[i].password === values.password
               ) {
                 console.log("Giriş yapıldı...");
-                setIsLogin(true);
+
                 setEmailValidation(false);
                 setPasswordValidation(false);
+                console.log(loginnedUsers.length);
                 if (loginnedUsers.length < 6) {
+                  console.log("girdi asdasdasdsad");
                   let isThere = false;
                   for (let item of loginnedUsers) {
                     console.log(item);
                     console.log(users[i]);
 
                     if (item.email === users[i].email) {
-                      console.log("girdi");
+                      setSubmitting(true);
+
+                      setIsLogin(true);
+
+                      setLoginnedUserr(item);
+                      // setLoginnedUsers([...loginnedUsers, users[i]]);
                       isThere = true;
+
                       break;
                     }
                   }
                   if (isThere === false) {
-                    setLoginnedUsers([...loginnedUsers, users[i]]);
+                    let isT = false;
+                    for (let item of loginnedUsers) {
+                      if (item.email === users[i].email) {
+                        isT = true;
+                      }
+                    }
+                    if (isT !== true) {
+                      setLoginnedUsers([...loginnedUsers, users[i]]);
+                    }
                   }
                 }
+                // setIsLogin(true);
               }
+              setSubmitting(false);
             }
             if (!isLogin) {
               if (emailControl) {
@@ -168,6 +189,7 @@ function LoginForm() {
                         size="sm"
                         onClick={handleClick}
                         style={{ backgroundColor: "transparent" }}
+                        disabled={disable}
                       >
                         {show ? (
                           <FontAwesomeIcon icon={faEye} />
@@ -208,7 +230,6 @@ function LoginForm() {
                 verticalAlign="middle"
                 type="submit"
                 fontWeight="700"
-                disabled={isSubmitting}
               >
                 Giriş Yap
               </Button>

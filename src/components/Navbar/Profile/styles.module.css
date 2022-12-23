@@ -27,3 +27,105 @@
   border: 3px solid white;
   right: 0;
 }
+
+.logout {
+  width: 360px;
+  height: 449.234px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2) 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logoutUpContainer {
+  margin: 12px 16px 16px 16px;
+  width: 328px;
+  height: 111.984px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: max(0% + 0px, min(0% + 8px, -999900% + 8.1919e6px)) 8px;
+}
+
+.profileLinkContainer {
+  margin: 8px 4px;
+  width: 320px;
+  height: 60px;
+}
+
+.profileLink {
+  padding: 8px;
+  width: 328px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.profileLinkImg {
+  width: 52px;
+  height: 52px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.profileLinkName {
+  font-size: 17px;
+  font-weight: 600;
+  padding: 4px;
+}
+
+.allProfile {
+  width: 328px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px;
+  margin: 0 auto;
+  color: rgb(38, 126, 243);
+}
+
+.buttons {
+  width: 360px;
+  height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: rgb(242, 242, 242);
+  border-radius: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgb(228, 230, 235);
+  margin: 8px 12px 8px 0px;
+}
+
+.buttonText {
+  width: 244px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.icon2 {
+  width: 24px;
+  height: 24px;
+  margin: 12px 0 12px 12px;
+  color: rgb(91, 98, 106);
+}
+
+.display {
+  display: none;
+}
+
+.display2 {
+  display: block;
+}

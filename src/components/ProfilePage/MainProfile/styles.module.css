@@ -1,0 +1,205 @@
+.MainProfileContainer {
+  position: relative;
+  top: 55px;
+  left: 59px;
+  width: calc(100% - 59px);
+  height: calc(100% - 55px);
+  background-color: rgb(240, 242, 245);
+}
+
+.topBackground {
+  position: absolute;
+  left: 0;
+  width: calc(100%);
+  height: 462.95px;
+  background-image: linear-gradient(
+    to top,
+    #ffffff,
+    rgba(255, 255, 255.9),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  background-color: rgba(111, 119, 129);
+  lighting-color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.cover {
+  width: 1250px;
+  height: 462.95px;
+  margin: 0 auto;
+  border-radius: max(0% + 0px, min(0% + 8px, -999900% + 1.16788e7px)) 8px;
+  position: relative;
+  z-index: 150;
+}
+
+.coverButtonContainer {
+  position: absolute;
+  bottom: 16px;
+  right: 34px;
+  width: 225px;
+  height: 36px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  z-index: 200;
+  cursor: pointer;
+}
+
+.coverButtonContainer:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.profile {
+  position: relative;
+  /* top: 462.95px; */
+  width: 1218px;
+  height: 146px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid rgb(204, 206, 210);
+  z-index: 250;
+}
+
+.profileImg {
+  position: relative;
+  top: -42px;
+  z-index: 100;
+  width: 184px;
+  height: 184px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-right: 16px;
+  z-index: 300;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.profileName {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.friends {
+  color: rgb(101, 103, 107);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.profileButtonGroups {
+  margin: 32px 0 16px 32px;
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.profileButton1Container {
+  width: 184.34 !important;
+  height: 36px;
+  background-color: rgb(27, 116, 228);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profileButton1Container:hover {
+  background-color: rgb(26, 110, 216);
+}
+
+.profileButton2Container {
+  width: 143.31px;
+  background-color: rgb(228, 230, 235);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.profileButton2Container:hover {
+  background-color: rgb(216, 218, 223);
+}
+
+.profileContentContainer {
+  position: relative;
+  width: 1216px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 200;
+  border-bottom: 1px solid rgb(204, 206, 210);
+}
+
+.profileContent {
+  width: 1138px;
+  height: 60px;
+  position: relative;
+  top: 0;
+  z-index: 200;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(119, 121, 124);
+  display: flex;
+}
+
+.profileContentItem {
+  width: max-content;
+  height: 60px !important;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profileContentItem:hover {
+  background-color: rgb(242, 242, 242);
+  border-radius: 10px;
+}
+
+.profileContentItemActive {
+  border-bottom: 3px solid rgb(50, 134, 243);
+  color: rgb(50, 134, 243);
+}
+
+.profileContentMenuContainer {
+  width: 48px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.profileContentMenu {
+  width: 48px;
+  height: 36px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(228, 230, 235);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profileContentMenu:hover {
+  background-color: rgb(216, 218, 223);
+}

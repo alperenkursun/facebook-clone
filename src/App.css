@@ -1,3 +1,9 @@
+html {
+  height: max-content;
+  background-color: rgb(240, 242, 245);
+  overflow-x: hidden;
+}
+
 .app {
   width: 100vw;
   height: max-content;

@@ -6,7 +6,8 @@ import { faXmark, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAuth } from "../../../contexts/AuthContext";
 function LoginLeft2() {
-  const { loginnedUsers, setLoginnedUsers } = useAuth();
+  const { loginnedUsers, setLoginnedUsers, setIsLogin, setLoginnedUserr } =
+    useAuth();
 
   return (
     <div>
@@ -24,17 +25,29 @@ function LoginLeft2() {
       <div className={styles.text1}>Yakınlardaki Girişler</div>
       <div className={styles.text2}>Resmine tıkla veya bir hesap ekle</div>
       <div className={styles.accounts}>
-        {loginnedUsers.map((item) => {
+        {loginnedUsers.map((item, index) => {
           return (
-            <div className={styles.account}>
+            <div key={index} className={styles.account}>
               <Image
                 width="160px"
                 height="160px"
                 borderTopRadius="8px"
                 src={profil}
                 alt="facebook"
+                onClick={() => {
+                  setLoginnedUserr(item);
+                  setIsLogin(true);
+                }}
               />
-              <div className={styles.name}>{item.name}</div>
+              <div
+                className={styles.name}
+                onClick={() => {
+                  setLoginnedUserr(item);
+                  setIsLogin(true);
+                }}
+              >
+                {item.name}
+              </div>
               <FontAwesomeIcon
                 icon={faXmark}
                 className={styles.close}
