@@ -6,7 +6,6 @@ import {
   faChevronRight,
   faCircleExclamation,
   faCircleQuestion,
-  faDisplay,
   faGear,
   faHouse,
   faMoon,

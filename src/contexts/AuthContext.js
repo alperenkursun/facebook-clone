@@ -11,9 +11,10 @@ const logi = localStorage.getItem("login")
 const loginnedUser = localStorage.getItem("loginnedUsers")
   ? JSON.parse(localStorage.getItem("loginnedUsers"))
   : [];
-// const isLogi = localStorage.getItem("isLogin")
-//   ? JSON.parse(localStorage.getItem("isLogin"))
-//   : false;
+
+const p = localStorage.getItem("posts")
+  ? JSON.parse(localStorage.getItem("posts"))
+  : [{}];
 
 function AuthProvider({ children }) {
   const users = user;
@@ -22,33 +23,24 @@ function AuthProvider({ children }) {
   const [loginnedUsers, setLoginnedUsers] = useState(loginnedUser);
   const [emailValidation, setEmailValidation] = useState(false);
   const [passwordValidation, setPasswordValidation] = useState(false);
-  const [disable, setDisable] = useState(null);
   const [loginnedUserr, setLoginnedUserr] = useState({
-    name: "asdasd",
-    surname: "sadasd",
+    name: "",
+    surname: "",
   });
   const [pages, setPages] = useState("Main");
   const [profilePages, setProfilePages] = useState("Pr");
+  const [posts, setPosts] = useState(p);
 
   localStorage.setItem("loginnedUsers", JSON.stringify(loginnedUsers));
   localStorage.setItem("login", JSON.stringify(login));
+  localStorage.setItem("posts", JSON.stringify(posts));
 
-  // localStorage.setItem("isLogin", JSON.stringify(isLogin));
-
-  // for (let i = 0; i < users.length; i++) {
-  //   if (
-  //     users[i].email === login.email &&
-  //     users[i].password === login.password
-  //   ) {
-  //     console.log("giriş yapıldı");
-  //     // setIsLogin(true);
-  //   }
-  // }
   console.log("isLogin", isLogin);
   console.log("users", users);
   console.log("login", login);
   console.log("loginnedUsers", loginnedUsers);
   console.log("loginnedUserr", loginnedUserr);
+  console.log("posts", posts);
 
   const values = {
     users,
@@ -61,14 +53,14 @@ function AuthProvider({ children }) {
     setEmailValidation,
     passwordValidation,
     setPasswordValidation,
-    disable,
-    setDisable,
     loginnedUserr,
     setLoginnedUserr,
     pages,
     setPages,
     profilePages,
     setProfilePages,
+    posts,
+    setPosts,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

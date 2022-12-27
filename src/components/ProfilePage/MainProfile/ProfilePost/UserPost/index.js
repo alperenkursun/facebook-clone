@@ -11,7 +11,7 @@ import { faFaceSmile } from "@fortawesome/free-regular-svg-icons";
 import { useAuth } from "../../../../../contexts/AuthContext";
 
 function UserPost() {
-  const { loginnedUserr } = useAuth();
+  const { loginnedUserr, posts, setPosts } = useAuth();
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -26,6 +26,20 @@ function UserPost() {
               loginnedUserr.name
             )}?`}
             className={styles.postInput}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                setPosts([
+                  ...posts,
+                  {
+                    email: loginnedUserr.email,
+                    name: loginnedUserr.name,
+                    surname: loginnedUserr.surname,
+                    post: event.target.value,
+                  },
+                ]);
+                event.target.value = "";
+              }
+            }}
           />
         </div>
 

@@ -6,7 +6,6 @@ import LoginLeft2 from "./LoginLeft2";
 import LoginFooter from "./LoginFooter";
 import styles from "./styles.module.css";
 import RegisterFormModal from "./RegisterFormModal";
-import { useDisclosure } from "@chakra-ui/react";
 import { useAuth } from "../../contexts/AuthContext";
 
 function Login() {

@@ -88,15 +88,12 @@ function RegisterFormModal() {
     },
     validationSchema: userSchema,
     onSubmit: (values, bag) => {
-      console.log(values);
       users.push(values);
       localStorage.setItem("users", JSON.stringify(users));
       bag.resetForm();
       formik.setErrors({});
       document.getElementById("close").click();
       setAlert(true);
-
-      console.log(users);
     },
   });
 

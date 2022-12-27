@@ -30,8 +30,6 @@ function LoginForm() {
     setPasswordValidation,
     loginnedUsers,
     setLoginnedUsers,
-    disable,
-    setDisable,
     setLoginnedUserr,
   } = useAuth();
   const [show, setShow] = useState(false);
@@ -42,10 +40,6 @@ function LoginForm() {
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={(values, { setSubmitting }) => {
-            // setTimeout(() => {
-            //   alert(JSON.stringify(values, null, 2));
-            //   setSubmitting(false);
-            // }, 400);
             setEmailValidation(false);
             setPasswordValidation(false);
             let emailControl = false;
@@ -57,25 +51,18 @@ function LoginForm() {
                 users[i].email === values.email &&
                 users[i].password === values.password
               ) {
-                console.log("Giriş yapıldı...");
-
                 setEmailValidation(false);
                 setPasswordValidation(false);
-                console.log(loginnedUsers.length);
+
                 if (loginnedUsers.length < 6) {
-                  console.log("girdi asdasdasdsad");
                   let isThere = false;
                   for (let item of loginnedUsers) {
-                    console.log(item);
-                    console.log(users[i]);
-
                     if (item.email === users[i].email) {
                       setSubmitting(true);
 
                       setIsLogin(true);
 
                       setLoginnedUserr(item);
-                      // setLoginnedUsers([...loginnedUsers, users[i]]);
                       isThere = true;
 
                       break;
@@ -93,7 +80,6 @@ function LoginForm() {
                     }
                   }
                 }
-                // setIsLogin(true);
               }
               setSubmitting(false);
             }
@@ -111,15 +97,7 @@ function LoginForm() {
             localStorage.setItem("login", JSON.stringify(login));
           }}
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-          }) => (
+          {({ values, handleChange, handleBlur, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <Popover>
                 <PopoverTrigger>
@@ -189,7 +167,6 @@ function LoginForm() {
                         size="sm"
                         onClick={handleClick}
                         style={{ backgroundColor: "transparent" }}
-                        disabled={disable}
                       >
                         {show ? (
                           <FontAwesomeIcon icon={faEye} />
